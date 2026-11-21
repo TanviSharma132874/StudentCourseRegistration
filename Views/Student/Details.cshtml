@@ -1,0 +1,16 @@
+@model Student
+@{
+    ViewData["Title"] = "Student Details";
+}
+
+<h2>Student Details</h2>
+
+<table>
+    <tr><th style="width: 30%;">Id</th><td>@Model.Id</td></tr>
+    <tr><th>Name</th><td>@Model.Name</td></tr>
+    <tr><th>Email</th><td>@Model.Email</td></tr>
+    <tr><th>Course</th><td>@Model.Course</td></tr>
+    <tr><th>Semester</th><td>@Model.Semester</td></tr>
+</table>
+
+<p><a class="btn btn-light" asp-action="Index">Back to List</a></p>

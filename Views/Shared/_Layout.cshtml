@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Student Course Registration</title>
+    <style>
+        body { font-family: Segoe UI, Arial, sans-serif; margin: 0; background: #f4f6f8; color: #222; }
+        nav { background: #1f4e9c; padding: 12px 24px; }
+        nav a { color: #fff; text-decoration: none; margin-right: 20px; }
+        nav .brand { font-weight: 600; font-size: 18px; }
+        main { max-width: 900px; margin: 24px auto; background: #fff; padding: 24px; border-radius: 6px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { text-align: left; padding: 8px; border-bottom: 1px solid #ddd; }
+        th { background: #eef2f7; }
+        label { display: block; margin-top: 14px; font-weight: 600; }
+        input, select { width: 100%; padding: 8px; margin-top: 4px; box-sizing: border-box; }
+        .btn { display: inline-block; padding: 8px 16px; background: #1f4e9c; color: #fff; border: 0; border-radius: 4px; text-decoration: none; cursor: pointer; }
+        .btn-light { background: #e3e8ef; color: #222; }
+        .text-danger, .field-validation-error { color: #c0392b; font-size: 14px; }
+        .input-validation-error { border: 1px solid #c0392b; }
+        .alert { background: #dff3e4; border: 1px solid #9bd3a8; padding: 10px 14px; border-radius: 4px; margin-bottom: 16px; }
+        footer { text-align: center; color: #777; font-size: 13px; padding-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a class="brand" asp-controller="Home" asp-action="Index">Student Course Registration</a>
+        <a asp-controller="Home" asp-action="Index">Home</a>
+        <a asp-controller="Student" asp-action="Index">Student List</a>
+        <a asp-controller="Student" asp-action="Create">Register</a>
+    </nav>
+
+    <main>
+        @if (TempData["Success"] is string message)
+        {
+            <div class="alert">@message</div>
+        }
+
+        @RenderBody()
+    </main>
+
+    <footer>ASP.NET Core MVC (.NET 10) - Self-Learning Activity</footer>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
